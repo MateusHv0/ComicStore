@@ -2,7 +2,8 @@ Projeto de app de quadrinhos feito com Kotlin e API feita em python com Django R
 
 ## Setup do projeto
 > Requisitos
-  Poetry e Android Studio
+  - Poetry
+  - Android Studio
 
 ## Buildar projeto
 > Etapas
