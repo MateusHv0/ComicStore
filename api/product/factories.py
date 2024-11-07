@@ -1,19 +1,21 @@
 import factory
 from product.models import Product, Category
 
+
 class CategoryFactory(factory.django.DjangoModelFactory):
-    name = factory.Faker('pystr')
-    slug = factory.Faker('pystr')
-    description = factory.Faker('pystr')
+    name = factory.Faker("pystr")
+    slug = factory.Faker("pystr")
+    description = factory.Faker("pystr")
     active = factory.Iterator([True, False])
 
     class Meta:
         model = Category
 
+
 class ProductFactory(factory.django.DjangoModelFactory):
-    price = factory.Faker('pyint')
-    name = factory.Faker('pystr')
-    stock = factory.Faker('pyint')
+    price = factory.Faker("pyint")
+    name = factory.Faker("pystr")
+    stock = factory.Faker("pyint")
 
     @factory.post_generation
     def categories(self, create, extracted, **kwargs):

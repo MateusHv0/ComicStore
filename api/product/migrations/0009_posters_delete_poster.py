@@ -7,19 +7,26 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0008_alter_poster_id'),
+        ("product", "0008_alter_poster_id"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Posters',
+            name="Posters",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('file_path', models.CharField(max_length=300)),
-                ('images', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='posters', to='product.images')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("file_path", models.CharField(max_length=300)),
+                (
+                    "images",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="posters",
+                        to="product.images",
+                    ),
+                ),
             ],
         ),
         migrations.DeleteModel(
-            name='Poster',
+            name="Poster",
         ),
     ]

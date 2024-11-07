@@ -1,4 +1,8 @@
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication, TokenAuthentication
+from rest_framework.authentication import (
+    SessionAuthentication,
+    BasicAuthentication,
+    TokenAuthentication,
+)
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
@@ -9,7 +13,8 @@ from product.serializers.product_serializer import ProductSerializer
 class ProductViewSet(ModelViewSet):
     authentication_classes = [SessionAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
-    queryset = Product.objects.all().prefetch_related('images__posters')
+    queryset = Product.objects.all().prefetch_related("images__posters")
     serializer_class = ProductSerializer
+
     def get_queryset(self):
         return Product.objects.all()

@@ -7,16 +7,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0004_rename_description_product_overview_and_more'),
+        ("product", "0004_rename_description_product_overview_and_more"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Images',
+            name="Images",
             fields=[
-                ('id', models.AutoField(primary_key=True, serialize=False)),
-                ('posters', models.CharField(blank=True, max_length=300)),
-                ('product', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='images', to='product.product')),
+                ("id", models.AutoField(primary_key=True, serialize=False)),
+                ("posters", models.CharField(blank=True, max_length=300)),
+                (
+                    "product",
+                    models.ForeignKey(
+                        on_delete=django.db.models.deletion.CASCADE,
+                        related_name="images",
+                        to="product.product",
+                    ),
+                ),
             ],
         ),
     ]
