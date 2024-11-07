@@ -7,18 +7,23 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0006_poster_remove_images_posters_images_posters'),
+        ("product", "0006_poster_remove_images_posters_images_posters"),
     ]
 
     operations = [
         migrations.RemoveField(
-            model_name='images',
-            name='posters',
+            model_name="images",
+            name="posters",
         ),
         migrations.AddField(
-            model_name='poster',
-            name='images',
-            field=models.ForeignKey(default=1, on_delete=django.db.models.deletion.CASCADE, related_name='images', to='product.images'),
+            model_name="poster",
+            name="images",
+            field=models.ForeignKey(
+                default=1,
+                on_delete=django.db.models.deletion.CASCADE,
+                related_name="images",
+                to="product.images",
+            ),
             preserve_default=False,
         ),
     ]

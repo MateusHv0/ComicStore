@@ -10,5 +10,6 @@ class CategoryViewSet(ModelViewSet):
     authentication_classes = [SessionAuthentication, TokenAuthentication]
     permission_classes = [IsAuthenticated]
     serializer_class = CategorySerializer
+
     def get_queryset(self):
         return Category.objects.all()

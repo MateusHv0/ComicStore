@@ -1,7 +1,8 @@
 from django.db import models
 
+
 class Category(models.Model):
-    id = models.AutoField(primary_key = True)
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
     description = models.TextField(max_length=500, blank=True, null=False)

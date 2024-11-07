@@ -13,6 +13,8 @@ django-extensions = "^3.2.3"
 django-debug-toolbar = "^4.4.6"
 django-core = "^1.4.1"
 django-filter = "^24.3"
+psycopg2-binary = "^2.9.10"
+flake8 = "^7.1.1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.2.2"

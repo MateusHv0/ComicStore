@@ -6,24 +6,32 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('product', '0005_images'),
+        ("product", "0005_images"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='Poster',
+            name="Poster",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('file_path', models.CharField(max_length=300)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("file_path", models.CharField(max_length=300)),
             ],
         ),
         migrations.RemoveField(
-            model_name='images',
-            name='posters',
+            model_name="images",
+            name="posters",
         ),
         migrations.AddField(
-            model_name='images',
-            name='posters',
-            field=models.ManyToManyField(related_name='images', to='product.poster'),
+            model_name="images",
+            name="posters",
+            field=models.ManyToManyField(related_name="images", to="product.poster"),
         ),
     ]

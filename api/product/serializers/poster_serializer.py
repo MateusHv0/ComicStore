@@ -7,8 +7,7 @@ class PosterSerializer(serializers.ModelSerializer):
     class Meta:
         model = Posters
         fields = [
-            'id',
-            'file_path',
+            "id",
+            "file_path",
         ]
-        extra_kwargs = {'slug': {'required': False}}
-
+        extra_kwargs = {"slug": {"required": False}}
